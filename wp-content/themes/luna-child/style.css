@@ -1,0 +1,20 @@
+/*
+ Theme Name:   Luna Child
+ Theme URI:    https://localhost/luna-child
+ Description:  Luna Child Theme
+ Author:       Bien Jerico Cueto
+ Author URI:   http://localhost
+ Template:     luna
+ Version:      1.0.0
+ Text Domain:  luna-child
+*/
+
+ #mt-projects > .grid > [class*="col-"] {
+   padding: 3px;
+ }
+ ul.social-media-icons {
+     margin: 0;
+     padding: 0;
+     text-align: center;
+     float: none;
+ }

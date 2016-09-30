@@ -1,0 +1,36 @@
+<?php
+
+
+
+function my_theme_enqueue_styles() {
+
+    $parent_style = 'parent-style'; // This is 'twentyfifteen-style' for the Twenty Fifteen theme.
+
+    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
+    wp_enqueue_style( 'child-style',
+        get_stylesheet_directory_uri() . '/style.css',
+        array( $parent_style ),
+        wp_get_theme()->get('Version')
+    );
+}
+add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
+
+//
+// function use_parent_theme_stylesheet() {
+//     // Use the parent theme's stylesheet
+//     return get_template_directory_uri() . '/style.css';
+// }
+//
+// function my_theme_styles() {
+//     $themeVersion = wp_get_theme()->get('Version');
+//
+//     // Enqueue our style.css with our own version
+//     wp_enqueue_style('child-theme-style', get_stylesheet_directory_uri() . '/style.css',
+//         array(), $themeVersion);
+// }
+// // Filter get_stylesheet_uri() to return the parent theme's stylesheet
+// add_filter('stylesheet_uri', 'use_parent_theme_stylesheet');
+//
+// // Enqueue this theme's scripts and styles (after parent theme)
+// add_action('wp_enqueue_scripts', 'my_theme_styles', 20);
+?>
